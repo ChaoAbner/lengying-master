@@ -26,7 +26,6 @@
 ## 项目结构
 
 ### 功能结构
-<div align=center><img width="100" height="150" src="https://img-blog.csdn.net/20161028230559575"/></div>
 
 ![Alt text](https://github.com/ChaoAbner/lengying-master/blob/master/images/功能.png)
 

@@ -1,0 +1,30 @@
+<import src="../../../template/message.wxml"/>
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 0 0 1em; box-sizing: border-box;'>
+  <template wx:if='{{!data_list.length}}' is="noMessage" data='{{show_message}}' />
+
+  <view wx:else class='like-con'>
+    <view class='like-item' wx:for='{{data_list}}'>
+      <!--用户信息  -->
+      <view class='l-right test-right'>
+        <!-- 头像 时间 -->
+        <view bindtap='go_userpage' data-item='{{item.sender}}'class='right-top'>
+          <image mode='aspectFill' src='{{item.sender.avater}}'></image>
+          <view style='width: 85%;' class='flex-column'>
+            <view class='username test-username'>{{item.sender.username}}
+              <text class='school' wx:if='{{item.sender.school != "设置你的高校"}}'>一 {{item.sender.school}}</text>
+              <text class='school' wx:else>一 ta暂未设置高校</text>
+            </view>
+            <text class='time'>{{item.create_at}}</text>
+          </view>
+        </view>
+        <view class='right-bottom test-right-bottom pro-right-bottom'>
+          想接你的约拍，跟我打个招呼吧
+          <text data-item='{{item}}' bindtap='lookMarket'>查看约拍</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

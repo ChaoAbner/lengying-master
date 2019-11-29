@@ -1,0 +1,3 @@
+/* pages/message/upload/upload.wxss */
+@import "../../../style/no-message.wxss";
+@import "../like/like.wxss";

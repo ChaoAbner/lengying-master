@@ -1,0 +1,7 @@
+/* pages/message/comment/comment.wxss */
+@import "../../../style/no-message.wxss";
+@import "../like/like.wxss";
+
+.text-limit{
+  max-width: 95%;
+}

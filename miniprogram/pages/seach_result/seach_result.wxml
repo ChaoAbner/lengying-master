@@ -1,0 +1,70 @@
+<!--pages/seach_result/seach_result.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top:{{height}}px;position: relative;'>
+  <view style='height:{{system.screenHeight * 0.2}}px;'>
+    <view style='height:{{header_height*2 -48}}px; top: {{height}}px;' class='bar'>
+      <image bindtap='back_page' src='../../images/black-Back.png'></image>
+    </view>
+
+    <view style='margin-top:{{(header_height*2 -48) + height}}px;' class='header' >
+      <view>搜索 "<text>{{search_key}}</text>"的结果如下</view>
+    </view>
+
+    <view class='info'>
+        <view class='tarbar'>
+          <text class='text-1' bindtap='tap_change' data-current='0'
+          style="color:{{current == 0 ? '#d52349' : '#1a2a3a'}};">{{all_data.photos.total}}张照片</text>
+          <text class='text-2' bindtap='tap_change' data-current='1'
+          style="color:{{current == 1 ? '#d52349' : '#1a2a3a'}};">{{all_data.collections.total}}个影集</text>
+          <text class='text-3' bindtap='tap_change' data-current='2'
+          style="color:{{current == 2 ? '#d52349' : '#1a2a3a'}};">{{all_data.users.total}}个用户</text>
+      </view>
+      <!-- tarbar end -->
+      <view animation="{{lineAniData}}" 
+          style='width:{{tran_data.t_1.width}}px; margin-left:{{tran_data.t_1.left}}px;' class='underline'>
+      </view>
+    </view>
+        
+    <swiper style='height:{{system.screenHeight * 0.9}}px' bindtransition='page_transition' bindchange='page_change' autoplay='{{autoplay}}' current='{{current}}'>
+      <swiper-item>
+        <scroll-view class='img_view' bindscroll='scroll' bindscrolltolower="scroll_to_bottom" bindscrolltoupper='scroll_to_upper' data-current='0' scroll-y='true'style='height:100%; width:100%;'>
+          <view class='img-item' wx:for="{{all_data.photos.results}}" wx:item='item' wx:index='index' style='position:absolute; top:{{img_height_list[index]}}px; left:{{img_width_list[index] * system.screenWidth * 0.49}}px;'>
+            <image bindtap='previewImg' data-item='{{item}}' mode='widthFix'
+            style='width:94%;height:{{(system.screenWidth / 2) * (item.height / item.width)}}px; max-height:{{system.screenHeight * 0.9}}px; background-color: {{item.color}};' 
+            src='{{item.urls.small}}'>
+            </image>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item style='background-color: #f7f7f7;'>
+        <scroll-view bindscroll='scroll' bindscrolltoupper='scroll_to_upper' bindscrolltolower="scroll_to_bottom" data-current='1' scroll-y='true'style='height:100%; width:100%;'>
+        <view class='coll_view'>
+          <view class='coll-item' bindtap='coll_detail' data-id='{{item.id}}' data-mess='{{item}}' data-id='{{item.id}}' wx:for="{{all_data.collections.results}}" wx:item='item'  wx:index='index'>
+            <image style='height:{{system.windowWidth * 0.48}}px' data-item='{{item}}' mode='aspectFill' src='{{item.preview_photos[0].urls.small}}'>
+            </image>
+            <view class='coll-info'>
+              <text class='title'>{{item.title}}</text>
+              <text class='num'>{{item.total_photos}}张图片</text>
+              <text class='user'>由{{item.user.username}}创建</text>
+            </view>
+          </view>
+        </view>
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item>
+        <scroll-view bindscroll='scroll' bindscrolltoupper='scroll_to_upper' bindscrolltolower="scroll_to_bottom" data-current='2' scroll-y='true'style='height:100%; width:100%;'>
+        <view class='user-view'>
+          <view class='user-item' bindtap='go_userpage' data-item='{{item}}' wx:for="{{all_data.users.results}}" wx:item='item'  wx:index='index'>
+            <image src='{{item.profile_image.medium}}'></image>
+            <text>{{item.username}}</text>
+            <image src='../../images/icon/arrow-hui.png'></image>
+          </view>
+        </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

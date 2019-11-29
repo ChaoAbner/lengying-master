@@ -1,0 +1,137 @@
+/* pages/comment/comment.wxss */
+page{
+  background-color: #fff;
+}
+
+.bar{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.bar image{
+  position: absolute;
+  left: 1em;
+  width: 24px;
+  height: 24px;
+}
+
+.user-input{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  /* bottom: 0; */
+  width: 100%;
+  height: 50px;
+  background-color: #f8f8f8;
+}
+.user-input image{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  margin: 1em;
+}
+.avater{
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.user-input input{
+  background-color: #fff;
+  height: 80%;
+  width: 74%;
+  padding-left: 10rpx;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.comment-info-y{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+.comment-info-n{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  color: #aaa;
+}
+.comment-info-n image{
+  width: 360rpx;
+  height: 360rpx;
+  margin-right: 0.5em;
+}
+.likes image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 0.5em;
+}
+
+.comment-item{
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin: 0.5em 0 0.5em 0;
+  padding-top: 0.5em;
+  border-top: 1px #f4f4f4 solid;
+}
+.c-right{
+  width: 100%;
+  /* padding-right: 1em; */
+  box-sizing: border-box;
+}
+.user-info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+.user-info text:last-of-type{
+  color: #2a3a4a;
+  font-weight: bold;
+}
+.abc{
+  padding-left: 5rpx;
+  display: flex;
+}
+.time-likes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8em;
+}
+.time-show{
+  color: #aabaca;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+.likes{
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+.c-bottom view{
+  padding-right: 0.5em;
+  box-sizing: border-box;
+  color: #2a3a4a;
+}

@@ -1,0 +1,100 @@
+<!--pages/userpage/userpage_real/userpage_real.wxml-->
+
+<view>
+  <view class='back-view' style='height:{{height*2 -48}}px; z-index: 9999;'>
+    <image bindtap='back_navg'  src='../../../images/goback.png'></image>
+  </view>
+
+  <view class='cover-view'>
+    <image class='cover-img' style='height:{{system.windowHeight * 0.5}}px;' mode='aspectFill' src='{{coverImgTempURL}}'></image>
+    <view class='mask' style='height:{{system.windowHeight * 0.5}}px'></view>
+  </view>
+
+<!-- height:{{system.windowWidth * 0.3 * 1.4}}px -->
+  <view class='user-info' >
+    <view style='width: {{system.windowWidth * 0.3}}px;top: {{-system.windowHeight / 7.7375}}px' class='user-avater'>
+      <image style='width: 100%; height: {{system.windowWidth * 0.3 * 1.1}}px ' mode='aspectFill' src='{{user_data.avater}}'></image>
+    </view>
+
+    <view class='user-textInfo' style='height:{{system.windowWidth * 0.3 * 1.1}}px; left: {{system.windowWidth * 0.4}}px; top: {{-system.windowHeight / 7.7375 - 5}}px'>
+
+      <view class='top-info'>
+        <text class='name'>{{user_data.username}}</text>
+        <view class='location'>
+          <image src='../../../images/icon/white-university.png'></image>
+          <text wx:if='{{user_data.school !== "设置你的高校"}}' style='color: #ccc;'>{{user_data.school}}</text>
+          <text wx:else style='color: #ccc;'>ta暂未设置高校</text>
+        </view>
+      </view>
+      
+      <view wx:if='{{cry_id !== user_data.uid}}' class='bottom-info'>
+        <view bindtap='doSubscribe' wx:if='{{!subscribe_obj[user_data.uid]}}' data-user='{{user_data}}' class='sub-btn'>关注ta</view>
+        <view bindtap='doSubscribe' wx:if='{{subscribe_obj[user_data.uid]}}' data-user='{{user_data}}' class='subed-btn'>已关注</view>
+        <!-- <view bindtap='go_talk' data-user='{{user_data}}' class='mess-btn'>私信ta</view> -->
+      </view>
+
+      <view wx:else class='bottom-info'>
+        <button open-type='share' class='sub-btn'>分享</button>
+        <view bindtap='goEdit' class='mess-btn'>编辑</view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='line' style='margin-top:{{system.windowWidth * 0.3 - system.windowHeight / 7.7375}}px'></view>
+
+  <view class='work-num-info'>
+    <view bindtap='lookFans' class='work-item'>
+      <text>{{user_data.followers_count}}</text>
+      <text >粉丝</text>
+    </view>
+    <view bindtap='lookSub' class='work-item'>
+      <text>{{user_data.following_count}}</text>
+      <text>关注</text>
+    </view>
+    <view bindtap='lookLike' class='work-item'>
+      <text>{{user_data.total_likes}}</text>
+      <text>喜欢</text>
+    </view>
+  </view>
+
+  <view class='user-work'>
+    <view class='bar-line'>
+      <view bindtap='tapChange' data-current='0' style='color: {{current == 0 ? "#ff1451" : ""}}'>照片<text class='show-num'>（{{user_data.total_photos}}）</text></view>
+      <view bindtap='tapChange' data-current='1'  style='color: {{current == 1 ? "#ff1451" : ""}}'>影集<text class='show-num'>（{{user_data.total_collections}}）</text></view>
+    </view>
+    <view animation='{{barUnderlineAniData}}' class='bar-underline'></view>
+    <swiper style='height:{{system.screenHeight * 0.8}}px' current='{{current}}' bindchange='swiperChange'>
+      <swiper-item>
+        <scroll-view scroll-y style='height: 100%;'>
+          <view class='img-con'>
+            <!-- <view class='img-item' wx:for='{{img_data}}' wx:index='index' style='position: absolute; top:{{img_height_list[index]}}px; left:{{img_width_list[index] * system.screenWidth * 0.46}}px;'>
+              <image class='item-{{index}}' bindtap='previewImg' data-item='{{item}}' mode='widthFix'
+       style='width:94%;height:{{(system.screenWidth / 2) * (item.height / item.width)}}px; max-height:{{system.screenHeight * 0.9}}px; background-color: {{item.color}}; opacity: {{show_img_group[index] ? "1" : "0"}};' src='{{ show_img_group[index] ? item.tempFileURL : ""}}' ></image>
+            </view> -->
+            <view class='img-item-1' wx:for='{{img_data}}' wx:index='index'>
+              <image class='item-{{index}}' bindtap='previewImg' data-item='{{item}}' mode='aspectFill'
+          style='width:98%; height:{{system.screenWidth * 0.48 * 0.98}}px; background-color: {{item.color}}; opacity: {{show_img_group[index] ? "1" : "0"}};' src='{{ show_img_group[index] ? item.tempFileURL : ""}}' ></image>
+           </view>
+            <view class='img-item-1' wx:if='{{img_data.length % 2}}' ></view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height: 100%;'  class='coll-con'>
+         <view bindtap='go_detailColl' data-item='{{item}}' class='coll-item' wx:for='{{coll_data}}'>
+            <view class='flex-align-center'>
+              <image mode='aspectFill' class='coll-preview-img' src='{{item.priview_photo}}'></image>
+              <view class='flex-column'>
+                <text class='title'>{{item.title}}</text>
+                <text class='num'>{{item.photos_num}}张照片</text>
+              </view>
+            </view>
+            <image class='arrow' src='../../../images/icon/arrow-hui.png'></image>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>

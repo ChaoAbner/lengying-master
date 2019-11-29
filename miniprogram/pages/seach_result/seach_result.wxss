@@ -1,0 +1,148 @@
+/* pages/seach_result/seach_result.wxss */
+
+.bar{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 999;
+}
+
+.bar image{
+  margin-left: 1em;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.header{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.3em;
+  padding-left: 1em;
+  box-sizing: border-box;
+}
+
+.header view{
+  border-left: 5px solid #d52349;
+  padding: 4rpx 16rpx;
+  color: #666;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.img_view{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.header text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline;
+  color: #2a3a4a;
+}
+.tarbar{
+  margin: 2em 0 0 0em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9em;
+}
+.underline{
+  height: 3px;
+  background-color: #d52349;
+  margin-bottom: 1em;
+}
+
+.img-item{
+  width: 50%;
+  padding: 2% 0 0 2%;
+  overflow: hidden;
+}
+.img-item image{
+  border-radius: 10px;
+}
+.coll_view{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.coll-item{
+  width: 46%;
+  margin: 1% 1% 1em 1%;
+  position: relative;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  overflow: hidden;
+  box-shadow:8px 8px 6px -2px #ccc;
+}
+.coll-info{
+  padding: 0.2em 0.5em;
+  margin-top: -1%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  box-sizing: border-box; 
+}
+.coll-info text{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+
+.coll-info .num{
+  color: #666;
+  font-size: 0.9em;
+}
+.coll-info .user{
+  color: #666;
+  font-size: 0.9em;
+}
+.user-view{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.user-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 1em 0.5em 1em;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 0.5em;
+}
+.user-item image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.user-item image:last-of-type{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 5%;
+}
+.user-item text{
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

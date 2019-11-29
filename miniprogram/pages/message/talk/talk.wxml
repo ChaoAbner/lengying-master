@@ -1,0 +1,52 @@
+<!--pages/message/talk/talk.wxml-->
+<!--pages/feedback/index.wxml-->
+<nav-bar style='margin-top: {{inputButtom}}px' navbar-data='{{nvabarData}}'></nav-bar>
+
+<view class="container" style='margin-top: {{height}}px; height: {{system.screenHeight - height}}px;'>
+    <import src="/template/addtell.wxml"/>
+    <template is="addtell" data="{{...addtell}}"/>
+  <!--反馈内容-->
+     <ul class="scrollwechat" bindtap="closeimg">
+        <scroll-view class="scrollview" scroll-into-view="notify_{{feedback.length - 1}}" scroll-with-animation="{{true}}" scroll-y="true" >
+          <view id='notify_{{index}}' wx:for="{{feedback}}" wx:key="index">
+            <li wx:if="{{item.create_at}}" class="mydate">
+              <view class="mydatebox">
+                <text class="mydatetext">{{item.create_at}}</text>
+              </view>
+            </li>
+            <li class="{{item.role ? 'sys':'user'}}">
+            <!--头像-->
+              <view class="{{item.role?'imgview1':'imgview2'}}">
+                <image bindtap='go_userpage' data-item='{{item.role?userInfo:toUserInfo}}' class="headimg" src="{{item.role? userInfo.avatarUrl : toUserInfo.avater}}"></image>
+              </view>
+              <!--三角-->
+              <view class="triangle">
+                    <image wx:if="{{item.role}}"  src="../../../images/triangleRight.png"></image>
+                    <image wx:else src="../../../images/triangleLeft.png"></image>
+              </view>
+              <!--内容 ：图片/文字-->
+              <view class="{{item.role?'textview2':'textview'}}">
+                <view class="feedbackimg" wx:if="{{item.content_type}}"> 
+                  <image src="{{item.content}}"></image>
+                </view>
+                <text class="feedbacktext" >{{item.content}}</text>
+              </view>
+              <view class="{{item.role?'imgview1':'imgview2'}}"></view>
+            </li>
+          </view>
+        <view class="link"></view>
+      </scroll-view>
+    </ul>
+
+
+    <view class="comment-fixed" style='bottom: {{inputButtom}}px;'>
+      <view class="cf-box">
+        <!-- <image src='../../../images/index/plus.png'></image> -->
+        <textarea wx:if='{{system_type}}' cursor-spacing='{{10}}' fixed  adjust-position="{{false}}" bindfocus="bindfocus" maxlength="200" bindblur="bindblur" value="{{addinput}}" placeholder="输入消息..."></textarea>
+        <input wx:else cursor-spacing='{{10}}' fixed  adjust-position="{{false}}" bindfocus="bindfocus" bindblur="bindblur" value="{{addinput}}" placeholder="输入消息..."></input>
+        <image bindtap='doSend' src='../../../images/icon/send.png'></image>
+      </view>
+    </view>
+
+</view>
+

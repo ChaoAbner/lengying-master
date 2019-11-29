@@ -1,0 +1,17 @@
+/* pages/message/product/product.wxss */
+@import "../../../style/no-message.wxss";
+@import "../like/like.wxss";
+@import "../subscribe/subscribe.wxss";
+
+.pro-right-bottom{
+  /* background-color: red; */
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+}
+.pro-right-bottom text{
+  padding: 0.2em 0.5em;
+  background-color: #ee4949;
+  border-radius: 10rpx;
+  color: #fff;
+}

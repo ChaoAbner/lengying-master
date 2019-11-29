@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../component/navbar-index/navbar-index"
+  },
+  "navigationBarTextStyle": "black"
+}

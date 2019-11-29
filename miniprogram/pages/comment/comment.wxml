@@ -1,0 +1,58 @@
+<!--pages/comment/comment.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top:{{height}}px'>
+  <view bindtap='back_page' style='height:{{header_height*2 -48}}px; top: {{height}}px;' class='bar'>
+    <image style='top:{{(header_height*2 -48)/2 - 12}}px' src='../../images/black-Back.png'></image>
+    <text wx:if="{{!comment_list}}">暂无评论</text>
+    <text wx:if="{{comment_list}}">{{comment_list_length}}条评论</text>
+  </view>
+  <!-- bar end -->
+  
+  <!-- <view style='height:{{system.windowHeight - (header_height*2 - 48 - 50 + height)}}px;'> -->
+      <scroll-view scroll-y='true' style='margin-top:{{header_height*2 -48 + height}}px;height:100%;padding-bottom: 50px;box-sizing: border-box;'>
+        <view class='{{comment_list_length ? "comment-info-y" : "comment-info-n"}}'>
+          <view class='comment-item' wx:if="{{comment_list_length}}" wx:for="{{comment_list}}" wx:item="item"wx:index="index">
+            <view bindtap='go_userpage' data-item='{{item}}' class='abc'>
+              <image class='avater' src='{{item.fields.avater}}'></image>
+            </view>
+
+            <view class='c-right'>
+              <view class='user-info'>
+                <text>{{item.fields.from_name}}</text>
+                <view class='time-likes'>
+                  <view class='likes'>
+                  <text style='color: #2c2c2c;margin-left:10rpx;margin-right:10px;'>{{item.fields.like_num > 0 ? item.fields.like_num : 0 }}</text>
+                    <image wx:if='{{!comment_like_obj[sid][item.pk]}}' bindtap='like_func'  data-index='{{index}}' data-pk='{{item.pk}}' src='../../images/index/like.png'></image>
+                    <image wx:if='{{comment_like_obj[sid][item.pk]}}' bindtap='like_func' 
+    data-index='{{index}}' data-pk='{{item.pk}}' src='../../images/index/liked.png'></image>
+                  </view>
+                </view>
+              </view>
+              <!-- user-info -->
+
+              <view class='c-bottom'>
+                <text class='time-show'>{{create_date[index]}} {{create_time[index]}}</text>
+                <view>{{item.fields.content}}</view>
+              </view>
+              <!-- c-bottom -->
+            </view>
+            
+          </view>
+
+          <block wx:if="{{!comment_list_length}}">
+            <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+            <text>暂时还没有评论</text>
+          </block>
+          
+      </view>
+    </scroll-view>
+  <!-- </view> -->
+
+
+</view>
+
+<view class='user-input' style='bottom: {{inputButtom}}px;'>
+  <image src='{{avater}}'></image>
+  <input bindblur='onblur' bindfocus='onfocus' fixed  bindconfirm='input_confirm' adjust-position="{{false}}" placeholder='说点什么吧' value='{{input_value}}' confirm-type='send'></input>
+</view>

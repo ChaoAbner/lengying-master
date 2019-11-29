@@ -1,0 +1,28 @@
+/* pages/report/report.wxss */
+
+.title{
+  font-size: 1.4em;
+  display: block;
+  margin-bottom: 1em;
+}
+.type-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+  margin: 0.5em 0 1em 0;
+  border-top: 1px solid #f4f4f4;
+}
+.type-item image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.button{
+  background-color: #ee4949;
+  border-radius: 100px;
+  color: #fff;
+  width: 80%;
+  margin-top: 2em;
+}

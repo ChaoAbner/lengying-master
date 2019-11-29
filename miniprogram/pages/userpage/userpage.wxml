@@ -1,0 +1,107 @@
+<!--pages/userpage/userpage.wxml-->
+<view>
+    <view class='back-view' style='height:{{height*2 -48}}px; '>
+      <image bindtap='back_navg' src='../../images/arrow-black.png'></image>
+    </view>
+  <view class='header' 
+  style='height:{{system.screenHeight * 0.5}}px; margin-bottom:{{system_type ? 1.5 : 2}}em'>
+    <view class='avater'>
+      <image mode='widthFix' src='{{avater}}' class='bg-blur' style='width:100%;height:{{system.screenHeight * 0.5 * 0.7}}px;'></image>
+      <image src='{{avater}}'></image>
+    </view>
+    <!-- avater end -->
+    <view class='info' style="height:{{system.screenHeight * 0.5 * 0.3}}px;">
+      <view class='user'>
+        <text style='font-weight: bold;font-size: 1.2em;'>{{username}}</text>
+        <!-- <text class='subcri'>关注ta</text> -->
+        <text class='subcri' wx:if='{{!sub_data[id]}}' bindtap='doSubscribe'>关注ta</text>
+        <text class='subcried' wx:if='{{sub_data[id]}}' bindtap='doSubscribe'>已关注</text>
+      </view>
+      <view class='type' style='width: {{system.screenWidth}}px;'>
+        <view class='tarbar'>
+          <text class='text-1' bindtap='tap_change' data-current='0'
+          style="color:{{current == 0 ? '#d52349' : '#3a4a5a'}}; font-size: {{current == 0 ? '1.1em' : '0.9em'}}">{{!use_info ? imgs_list[0].user.total_photos : userinfo.total_photos}}张照片</text>
+          <text class='text-2' bindtap='tap_change' data-current='1'
+          style="color:{{current == 1 ? '#d52349' : '#3a4a5a'}}; font-size: {{current == 1 ? '1.1em' : '0.9em'}}">{{!use_info ? imgs_list[0].user.total_likes: userinfo.total_likes}}个喜欢</text>
+          <text class='text-3' bindtap='tap_change' data-current='2'
+          style="color:{{current == 2 ? '#d52349' : '#3a4a5a'}}; font-size: {{current == 2 ? '1.1em' : '0.9em'}}">{{!use_info ? imgs_list[0].user.total_collections : userinfo.total_collections}}个影集</text>
+        </view>
+        <!-- tarbar end -->
+        <!-- <view animation="{{lineAniData}}" 
+        style='width:{{tran_data.t_1.width}}px; margin-left:{{tran_data.t_1.left}}px;' class='underline'></view> -->
+      </view>
+      <!-- type end -->
+    </view>
+  </view>
+  <!-- header end -->
+    <view style='height:{{system.screenHeight * 0.79}}px;' class='content'>
+        <swiper style='height: 100%;' bindtransition='page_transition' bindchange='page_change' autoplay='{{autoplay}}' current='{{current}}'>
+          <swiper-item>
+          <scroll-view bindscroll='scroll' bindscrolltoupper='scroll_to_upper' bindscrolltolower="scroll_to_bottom" data-current='0' scroll-y='true'style='height:{{system.screenHeight * 0.79}}px; width:100%;'>
+              <view class='img-item' wx:for="{{imgs_list}}" wx:item='item' wx:index='index' style='position: absolute; top:{{img_height_list[index]}}px; left:{{img_width_list[index] * system.screenWidth * 0.49}}px;' >
+                <image bindtap='previewImg' data-item='{{item}}' mode='widthFix'
+                style='width:96%;height:{{(system.screenWidth / 2) * (item.height / item.width)}}px; max-height:{{system.screenHeight * 0.9}}px; background-color: {{item.color}}; border-radius: 10px;' 
+                src='{{item.urls.small}}'>
+                </image>
+              </view>
+
+              <!-- 加载 -->
+              <view wx:if='{{!img_down && current==0}}' class='bottom-load' style='position: absolute; top:{{img_height_list[img_height_list_length-1] + system.windowWidth/2 * imgs_list[img_height_list_length-1].height / imgs_list[img_height_list_length-1].width}}px;'>
+                <image style='margin-right: 10px; width: 36rpx; height: 36rpx;' src='../../images/index/load.gif'></image>
+                正在加载...
+              </view>
+              <!-- 加载 -->
+            </scroll-view>
+          </swiper-item>
+
+          <swiper-item>
+          <scroll-view bindscrolltoupper='scroll_to_upper' bindscrolltolower="scroll_to_bottom" data-current='1'  scroll-y='true'style='height:{{system.screenHeight * 0.79}}px; width:100%;'>
+              <view class='img-item' wx:for="{{likes_list}}" wx:item='item' wx:index='index' style='position: absolute; top:{{like_img_height_list[index]}}px; left:{{like_img_width_list[index] * system.screenWidth * 0.49}}px;' >
+                <image bindtap='previewImg'  data-item='{{item}}' mode='widthFix'
+                style='width:96%;height:{{(system.screenWidth / 2) * (item.height / item.width)}}px; max-height:{{system.screenHeight * 0.9}}px; background-color: {{item.color}}; border-radius: 10px;' 
+                src='{{item.urls.small}}'>
+                </image>
+              </view>
+
+              <!-- 加载 -->
+              <view wx:if='{{!like_down && current==1}}'  class='bottom-load' style='position: absolute; top:{{like_img_height_list[like_height_list_length-1] + system.windowWidth/2 * likes_list[like_height_list_length-1].height / likes_list[like_height_list_length-1].width}}px;'>
+                <image style='margin-right: 10px; width: 36rpx; height: 36rpx;' src='../../images/index/load.gif'></image>
+                正在加载...
+              </view>
+              <!-- 加载 -->
+            </scroll-view>
+          </swiper-item>
+
+          <swiper-item>
+            <scroll-view bindscrolltoupper='scroll_to_upper' bindscrolltolower="scroll_to_bottom" data-current='2'  scroll-y='true'style='height:{{system.screenHeight * 0.79}}px; width:100%; padding-left: 0.5em; padding-right: 0.5em; box-sizing: border-box;'>
+              <view bindtap='coll_detail' data-mess='{{item}}' data-id='{{item.id}}' class='coll_item' wx:for="{{colls_list}}" wx:item='item' wx:index='index'>
+                <view class='img-text'>
+                  <view class='show-image'>
+                    <image mode='aspectFill' src='{{item.preview_photos[0].urls.small}}'></image>
+                  </view>
+
+                  <view class='title'>
+                    <text>{{item.title}}</text>
+                    <text>{{item.total_photos}}张照片</text>
+                  </view>
+                </view>
+
+                <view class='arrow'>
+                  <image src='../../images/icon/arrow-hui.png'></image>
+                </view>
+
+                <view class='divline'></view>
+              </view>
+              <!-- coll-item end -->
+              <!-- 加载 -->
+              <view wx:if='{{!coll_down && current == 2}}' class='bottom-load' style='position: absolute; top:{{like_height_list[like_height_list_length-1]}}px'>
+                <image style='margin-right: 10px; width: 36rpx; height: 36rpx;' src='../../images/index/load.gif'></image>
+                正在加载...
+              </view>
+              <!-- 加载 -->
+            </scroll-view>
+          </swiper-item>
+      </swiper>
+    </view>
+
+</view>

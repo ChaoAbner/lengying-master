@@ -1,0 +1,79 @@
+<!--pages/preview/preview.wxml-->
+<view class='show-img' style='height:{{system.screenHeight}}px'>
+
+  <view bindtap='back_page' style='height:{{height*2 -48}}px;top:0;left:1em;display: {{is_hide ? "none" : "flex"}};' class='bar'>
+    <image  src='../../images/preview/error.png'></image>
+  </view>
+    
+    <image animation="{{imgAniData}}" bindtap='img_tap' class='show' src='{{!item.isPassed ?  item.urls.regular : item.tempFileURL}}' mode='widthFix' style='height:{{item.height / item.width * system.screenWidth}}px; max-height:{{system.screenHeight * 0.95}}px; max-width:100%; background-color:{{item.color}};'></image>
+
+  <view animation="{{animationData}}" class='fix' style='display: {{is_hide ? "none" : "flex"}};'>
+    <view class='interact'>
+      <view class='witget'>
+        <view bindtap='like_func'>
+          <image wx:if='{{!like_obj[id]}}' src='../../images/preview/like.png'></image>
+          <text wx:if='{{!like_obj[id]}}'>{{!item.isPassed ? item.likes : item.like_num}}</text>
+          <image wx:if='{{like_obj[id]}}' src='../../images/preview/liked.png'></image>
+          <text wx:if='{{like_obj[id]}}'>{{!item.isPassed ? item.likes + 1 : item.like_num + 1}}</text>
+        </view>
+        <view bindtap='show_comment'>
+          <image src='../../images/preview/comment.png'></image>
+          <text wx:if='{{!item.isPassed}}'>{{comment_length}}</text>
+          <text wx:else>{{comment_length}}</text>
+        </view>
+
+          <image bindtap='action_sheet' style='margin-left: 1em;' src='../../images/icon/more.png'></image>
+
+      </view>
+
+      <view bindtap='show_all' class='totop'>
+        <image animation="{{topAniData}}" src='../../images/preview/top.png'></image>
+      </view>
+      <!-- totop end -->
+    </view>
+    <!-- interact end -->
+
+    <view class='info'>
+      <view class='text-info'>
+        <text class='title' wx:if='{{!item.title}}'>棱影推荐</text>
+        <text class='title' wx:if='{{item.title}}'>{{item.title}}</text>
+        <text class='name'>{{item.user.username}} 发布</text>
+      </view>
+
+      <view bindtap='go_userpage' data-item='{{item.user}}' class='user-info'>
+        <image src='{{!item.isPassed ? item.user.profile_image.small : item.user.avater}}'></image>
+      </view>
+    </view>
+    <!-- info end -->
+
+    <view class='img-info' style='height: {{system.screenHeight * 0.2}}px; bottom: -{{system.screenHeight * 0.2}}px'>
+      <view>
+        <image src='../../images/preview/time.png'></image>
+        <text>{{time}}</text>
+      </view>
+
+      <view>
+        <image src='../../images/preview/chicun.png'></image>
+        <text>{{item.width}} × {{item.height}}</text>
+      </view>
+      
+      <view wx:if='{{item.location}}'>
+        <image src='../../images/preview/location.png'></image>
+        <text>{{item.location}}</text>
+      </view>
+    </view>
+    <!-- img-info end -->
+  </view>
+  <!-- fix end -->
+</view>
+
+<!-- action sheet -->
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="action_sheet">
+    <action-sheet-item wx:if='{{!item.iid || item.user.uid == cry_id}}' bindtap='goAddColl'>加入影集</action-sheet-item>
+    
+    <action-sheet-item style='margin-top: 0.3em;' wx:if='{{!item.iid || item.user.uid == cry_id}}' bindtap='save' data-url='{{!item.isPassed ?  item.urls.regular : item.tempFileURL}}'>下载</action-sheet-item>
+    <action-sheet-item><button style='background-color: #fff; border: none; margin:0' open-type='share'>分享</button></action-sheet-item>
+    <action-sheet-item style='color: #f00;' bindtap='goReport'>举报</action-sheet-item>
+    <action-sheet-cancel >取消</action-sheet-cancel>
+</action-sheet>
+<!-- action sheet -->

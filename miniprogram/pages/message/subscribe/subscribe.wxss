@@ -1,0 +1,43 @@
+/* pages/message/subscribe/subscribe.wxss */
+@import "../../../style/no-message.wxss";
+@import "../like/like.wxss";
+
+.test{
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.test-right{
+  width: 100%;
+}
+.test-username{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.username text{
+  font-size: 0.8em;
+  color: #2a3a4a;
+}
+.school{
+  text-align: right;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9em;
+  color: #5a6a7a;
+}
+.test-right-bottom{
+  display: flex;
+  align-items: center;
+}
+.test-right-bottom image{
+  margin-left: 0;
+  margin-right: 0.5em;
+  width: 48rpx;
+  height: 48rpx;
+}

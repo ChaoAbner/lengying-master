@@ -1,0 +1,14 @@
+<!--pages/report/report.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 0 0 1em; box-sizing: border-box;'>
+  <view class='info'>
+    <text class='title'>选择举报类型</text>
+      <view bindtap='choose_type' data-index='{{index}}' wx:for='{{type}}' wx:index='index' class='type-item'>
+        <text>{{item}}</text>
+        <image wx:if='{{choose_index == index}}' src='../../images/icon/true.png'></image>
+      </view>
+  </view>
+
+  <button bindtap='submit' class='button'>提交</button>
+</view>

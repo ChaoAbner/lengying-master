@@ -1,0 +1,29 @@
+<!--pages/message/comment/comment.wxml-->
+<import src="../../../template/message.wxml"/>
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 0 0 1em; box-sizing: border-box;'>
+  <template wx:if='{{!data_list.length}}' is="noMessage" data='{{show_message}}' />
+
+    <view wx:else class='like-con'>
+    <view class='like-item' wx:for='{{data_list}}'>
+      <!--用户信息  -->
+      <view class='l-right'>
+        <!-- 头像 时间 -->
+        <view bindtap='go_userpage' data-item='{{item.sender}}' class='right-top'>
+          <image mode='aspectFill' src='{{item.sender.avater}}'></image>
+          <view class='flex-column'>
+            <text class='username'>{{item.sender.username}}</text>
+            <text class='time'>{{item.create_at}}</text>
+          </view>
+        </view>
+        <view class='right-bottom text-limit'>{{item.content}}</view>
+      </view>
+      <!-- 图片 -->
+      <view bindtap='previewImg' data-item='{{item.target}}' class='l-left'>
+          <image mode='aspectFill' src='{{item.target.tempFileURL}}'></image>
+      </view>
+    </view>
+  </view>
+
+</view>

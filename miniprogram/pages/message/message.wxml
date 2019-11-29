@@ -1,0 +1,52 @@
+<!--pages/message/message.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px;'>
+  <view class='session'>
+    <view style='margin-top: -0.2em;' bindtap='goMessage' data-type='like' class='item'>
+      <image src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/like.png?sign=d2e3b63af1589697686d380dc5d41f9b&t=1557139468'></image>
+      <text>点赞</text>
+      <text class='notify-num' wx:if='{{notifyLength.like}}'>{{notifyLength.like}}</text>
+      <image style='width: 32rpx; height: 32rpx;' class='arrow' src='../../images/icon/arrow-hui.png'></image>
+    </view>
+    <view bindtap='goMessage' data-type='comment'  class='item'>
+      <image src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/comment.png?sign=77bde84aab22643a34914f4360036525&t=1557139516'></image>
+      <text>评论</text>
+      <text class='notify-num' wx:if='{{notifyLength.comment}}'>{{notifyLength.comment}}</text>
+      <image style='  width: 32rpx; height: 32rpx;' class='arrow' src='../../images/icon/arrow-hui.png'></image>
+    </view>
+    <view bindtap='goMessage' data-type='subscribe'  class='item'>
+    <text class='notify-num' wx:if='{{notifyLength.subscribe}}'>{{notifyLength.subscribe}}</text>
+      <image src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/person.png?sign=d2eb3e6426947d7c99531ab4e6966948&t=1557139536'></image>
+      <text>关注</text>
+      <image style=' width: 32rpx; height: 32rpx;' class='arrow' src='../../images/icon/arrow-hui.png'></image>
+    </view>
+    <view bindtap='goMessage' data-type='product'  class='item'>
+      <image src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/img.png?sign=4d15e312279172f68fd13b827d37574c&t=1557139500'></image>
+      <text>约拍</text>
+      <text class='notify-num' wx:if='{{notifyLength.work}}'>{{notifyLength.work}}</text>
+      <image style='  width: 32rpx; height: 32rpx;' class='arrow' src='../../images/icon/arrow-hui.png'></image>
+    </view>
+    <view bindtap='goMessage' data-type='upload'  class='item'>
+      <image src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/upload.png?sign=99e80d67074067848c61ee06c7bd8e9b&t=1557139480'></image>
+      <text>发布</text>
+      <text class='notify-num' wx:if='{{notifyLength.upload}}'>{{notifyLength.upload}}</text>
+      <image style='  width: 32rpx; height: 32rpx;' class='arrow' src='../../images/icon/arrow-hui.png'></image>
+    </view>
+  </view>
+
+  <view class='session' >
+    <view bindtap='go_talk' hover-class='bg-hui' data-item='{{item}}' data-index='{{index}}' class='announce-item' wx:for='{{notifyData.announce}}' wx:key='index'>
+      <image src='{{item.sender.avater}}'></image>
+      <view class='flex-column'>
+        <view class='flex-space-between'>
+          <text class='username'>{{item.sender.username}}</text>
+          <text class='time'>{{item.create_at}}</text>
+        </view>
+        <text class='message' wx:if='{{item.notify_id === 1}}'>{{userinfo.nickName}}{{item.notify.content}}</text>
+        <text class='message' wx:else>{{item.notify.content}}</text>
+      </view>
+      <text class='divright' wx:if='{{notifyLength.announce[item.notify.sender_id]}}'>{{notifyLength.announce[item.notify.sender_id]}}</text>
+    </view>
+  </view>
+</view>

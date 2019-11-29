@@ -1,0 +1,6 @@
+<template name='noMessage'>
+  <view class='no-message'>
+    <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+    <text>{{show_message}}</text>
+  </view>
+</template>

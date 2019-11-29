@@ -1,0 +1,126 @@
+{
+  "pages": [
+    "pages/index/index",
+
+    "pages/login/login",
+    "pages/login/agreement/agreement",
+    "pages/login/setschool/setschool",
+
+    "pages/me/me",
+    "pages/me/feedback/feedback",
+    "pages/me/contact/contact",
+    "pages/me/support/support",
+    "pages/me/editInfo/editInfo",
+    "pages/me/follow/follow",
+    "pages/me/fans/fans",
+    "pages/me/like/like",
+    "pages/me/help/help",
+    "pages/me/help/detail/detail",
+    "pages/me/chooseBackground/chooseBackground",
+
+    "pages/search/search",
+    "pages/search/morecate/morecate",
+    "pages/search/morecoll/morecoll",
+    "pages/search/detail_cate/detail_cate",
+    "pages/search/detail_coll/detail_coll",
+    "pages/search/photographer/photographer",
+    "pages/search/scenery/scenery",
+    "pages/search/market/market",
+    "pages/search/market/push/push",
+    "pages/search/market/mine/mine",
+    "pages/search/market/detail/detail",
+    "pages/search/community/community",
+    "pages/search/community/push/push",
+    "pages/search/community/push/preview/preview",
+    "pages/search/community/push/card/card",
+    "pages/search/community/push/agreement/agreement",
+    "pages/search/community/extracting/extracting",
+    "pages/search/activity/activity",
+    "pages/search/activity/detail/detail",
+
+    "pages/publish/publish",
+    "pages/publish/tip/tip",
+    "pages/publish/upload/upload",
+    "pages/publish/cate/cate",
+    "pages/publish/map/map",
+
+    "pages/message/message",
+    "pages/message/like/like",
+    "pages/message/comment/comment",
+    "pages/message/subscribe/subscribe",
+    "pages/message/product/product",
+    "pages/message/upload/upload",
+    "pages/message/talk/talk",
+
+    "pages/product/product",
+    "pages/product/createColl/createColl",
+
+    "pages/userpage/userpage",
+    "pages/userpage/userpage_real/userpage_real",
+
+    "pages/preview/preview",
+    "pages/seach_result/seach_result",
+    "pages/comment/comment",
+    "pages/report/report",
+    "pages/addToColl/addToColl",
+    "pages/directMessage/directMessage",
+
+    "component/navbar/navbar",
+    "component/navbar-me/navbar-me",
+    "component/navbar-index/navbar-index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d52349",
+    "navigationBarTitleText": "棱影",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "onReachBottomDistance": 200
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#666",
+    "selectedColor": "#d52349",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home-s.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "发现",
+        "iconPath": "images/tabbar/search.png",
+        "selectedIconPath": "images/tabbar/search-s.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "images/tabbar/plus-square.png",
+        "selectedIconPath": "images/tabbar/plus-square.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "通知",
+        "iconPath": "images/tabbar/bell.png",
+        "selectedIconPath": "images/tabbar/bell-s.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tabbar/me.png",
+        "selectedIconPath": "images/tabbar/me-s.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx18a2ac992306a5a4"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于展示地理位置"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,4 @@
+<!--component/navbar-index/navbar-index.wxml-->
+<!--component/navbar/navbar.wxml-->
+<view class='nav-wrap' style='height: {{height}}px;'></view>
+

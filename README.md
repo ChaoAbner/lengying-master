@@ -26,7 +26,7 @@
 ## 项目结构
 
 ### 功能结构
-<center><img width="100" height="150" src="https://img-blog.csdn.net/20161028230559575"/></center>
+<div align=center><img width="100" height="150" src="https://img-blog.csdn.net/20161028230559575"/></div>
 
 ![Alt text](https://github.com/ChaoAbner/lengying-master/blob/master/images/功能.png)
 
@@ -44,8 +44,10 @@
 
 ## 项目快照
 
+<div align=center>![Alt text](https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg)</div>
 
-![Alt text](https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg)
+
+
 
 ![Alt text](https://github.com/ChaoAbner/lengying-master/blob/master/images/2508837d0ef3d1e262dde83f72609ac.jpg)
 

@@ -44,7 +44,7 @@
 
 ## 项目快照
 
-<div align=center><img width="60%" height="80%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg"/></div>
+<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg"/></div>
 <div align=center>![Alt text](https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg)</div>
 
 

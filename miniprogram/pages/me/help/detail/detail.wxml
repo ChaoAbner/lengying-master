@@ -1,0 +1,12 @@
+<!--pages/me/help/detail/detail.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view class='con' style='margin-top:{{height}}px;'>
+  <text class='title'>{{question}}</text>
+  <view class='flex'>
+    <image style='align-self: flex-start;' src='../../../../images/icon/double-quote-sans-left.png'></image>
+      <text wx:for='{{answer[question]}}' class='answer'>「 {{item}} 」</text>
+    <image style='align-self: flex-end;'  src='../../../../images/icon/double-quote-sans-right.png'></image>
+  </view>
+
+</view>

@@ -1,0 +1,38 @@
+/* pages/publish/cate/cate.wxss */
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+scroll-view{
+  padding-left: 1em;
+  box-sizing: border-box ;
+  padding-bottom: 1em;
+}
+scroll-view view{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.8em;
+  box-sizing: border-box;
+  margin: 0.8em;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+image{
+  width: 48rpx;
+  height:  48rpx;
+}
+.back-view{
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 99;
+  background-color: red;
+}
+.back-view image{
+  width: 48rpx;
+  height: 48rpx;
+}

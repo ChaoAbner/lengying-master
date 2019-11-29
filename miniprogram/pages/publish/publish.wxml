@@ -1,0 +1,34 @@
+<!--pages/publish/publish.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view class='top-con' style='margin-top: {{height}}px; height: {{system.windowHeight * 0.7}}px'>
+  <text class='title-1'>棱影</text>
+  <text class='title-2'>创造属于你的艺术</text>
+
+  <view class='line'></view>
+
+  <text class='comon-text'>年华逝去，常常触景生情，却物是人非</text>
+  <text class='comon-text'>不如现在将自己活得有棱有角</text>
+  <text style='margin-bottom: 1em;' class='comon-text'>用心记录身边的美好。</text>
+  <text class='comon-text'>无需专业，只因热爱</text>
+  <text class='comon-text'>将你眼前的艺术变成我们心中的世界。</text>
+</view>
+
+<view class='con' style=' height: {{system.windowHeight * 0.3}}px'>
+  <view class='item-con'>
+    <view bindtap='go_upload' data-mode='0' class='item'>
+      <image animation='{{imgAniData_1}}' src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/two-imge.png?sign=cc9609ccc73f1675ab8cd234f4755f81&t=1557624033'></image>
+      <text>发单图</text>
+    </view>
+    <view bindtap='go_upload' data-mode='1' class='item'>
+      <image animation='{{imgAniData_2}}'src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/one-image.png?sign=88e18fa2104a6fac2e2516ca2c7a1d28&t=1557624040'></image>
+      <text>发组图</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class='tip'>
+  <text>棱影会保护你的著作权</text>
+  <text>你的所有作品不会对外提供下载</text>
+</view> -->

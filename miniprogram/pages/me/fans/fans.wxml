@@ -1,0 +1,27 @@
+<!--pages/me/fans/fans.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 1em 0 1em; box-sizing: border-box;'>
+    <view bindtap='go_userpage'  data-user='{{item}}' wx:if='{{data_list}}' class='sub-item' wx:for='{{data_list}}' wx:index='index'>
+      <view class='flex-row' style='width: 100%;'>
+        <image src='{{item.avater}}'></image>
+        <view class='flex-column' style='width: 85%;'>
+          <view class='flex-row' style='width: 100%; justify-content: space-between; align-item: center;'>
+            <text>{{item.username}}</text>
+            <text class='school' wx:if='{{item.school == "设置你的高校"}}'>ta暂未设置高校</text>
+            <text class='school' wx:else>{{item.school}}</text>
+          </view>
+          
+          <text>共有{{item.total_photos}}张照片</text>
+        </view>
+      </view>
+
+    </view>
+
+    <view class='no-data' wx:if='{{!data_list}}'>
+      <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+      <text wx:if='{{nvabarData.title == "我的粉丝"}}'>你暂时还没有粉丝哦</text>
+      <text wx:else>他暂时还没有粉丝哦</text>
+    </view>
+</view>
+

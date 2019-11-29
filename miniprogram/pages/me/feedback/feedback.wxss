@@ -1,0 +1,61 @@
+/* pages/me/feedback/feedback.wxss */
+
+input ,textarea{
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 0.5em 1em;
+  background-color: #fff;
+  font-size: 0.9em;
+  text-align: top;
+}
+
+.content textarea{
+  height: 300rpx;
+  width: 92%;
+}
+
+.contact input{
+  height: 60rpx;
+  
+}
+.content, .contact{
+  margin: 1em 0;
+}
+
+.contact{
+  margin-top: 2em;
+}
+.content text{
+  margin: 1.2em;
+  color: #aaa;
+  font-size: 0.9em;
+}
+.contact text{
+  color: #aaa;
+  font-size: 0.9em;
+  margin: 1em 1em;
+}
+
+button{
+  background-color: #ee4949;
+  color: #fff;
+  margin: 1em;
+  border-radius: 50px;
+}
+.feedback-choose{
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.feedback-choose text{
+  padding: 5rpx; 
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ee4949;
+  color: #ee4949;
+  display: inline;
+  margin: 0.5em;
+}

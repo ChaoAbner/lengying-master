@@ -1,0 +1,23 @@
+<!--pages/me/follow/follow.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 1em 0 1em; box-sizing: border-box;'>
+    <view bindtap='go_userpage'  data-user='{{item}}' wx:if='{{data_list.length}}' class='sub-item' wx:for='{{data_list}}' wx:index='index'>
+      <view class='flex-row'>
+        <image src='{{item.avater}}'></image>
+        <view class='flex-column'>
+          <text>{{item.username}}</text>
+          <text>共有{{item.total_photos}}张照片</text>
+        </view>
+      </view>
+      
+      <text catchtap='subFunc' data-index='{{index}}' data-type='0' data-id='{{item.uid}}' wx:if="{{temp_subscribe[item.uid] && (cry_id !== item.uid)}}" class='subed'>已关注</text>
+      <text catchtap='subFunc' data-index='{{index}}' data-type='1' data-id='{{item.uid}}' wx:if="{{!temp_subscribe[item.uid] && (cry_id !== item.uid)}}" class='sub'>关注ta</text>
+    </view>
+
+    <view class='no-data' wx:if='{{!data_list}}'>
+      <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+      <text wx:if='{{nvabarData.title == "我的关注"}}'>你还没有关注过别人哦</text>
+      <text wx:else>他还没有关注过别人哦</text>
+    </view>
+</view>

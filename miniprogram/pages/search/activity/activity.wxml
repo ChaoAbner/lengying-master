@@ -1,0 +1,14 @@
+<!--pages/search/activity/activity.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view class='con' style='margin-top: {{height + 20}}px;'>
+  <view wx:if='{{datalist.length}}' bindtap='go_detail' data-item='{{item}}' class='a-item' wx:for='{{datalist}}'>
+    <view class='mask'><text>「 {{item.title}} 」</text></view>
+    <image src='{{item.posters}}' mode='aspectFill'></image>
+    <view class='bottom-con'>
+      <text class='a-time'>活动时间：{{item.start_time}} ~ {{item.end_time}}</text>
+      <text class='a-host'>主办方：{{item.host}}</text>
+      <!-- <text class='a-create-at'>发布时间：{{item.create_at}}</text> -->
+    </view>
+  </view>
+</view>

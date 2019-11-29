@@ -1,0 +1,62 @@
+/* pages/login/setschool/setschool.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  color: #4a5a6a;
+}
+image{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.school-con{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #1a2a3a;
+  margin-bottom: 1em;
+}
+.picker{
+  margin: 1em;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.confirm{
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.confirm text{
+  color: #6a7a8a;
+  text-decoration: underline;
+  font-size: 0.9em;
+}
+.confirm button{
+  background-color: #ee4949;
+  color: #fff;
+  width: 40%;
+  margin-bottom: 1em;
+  border-radius: 100px;
+}
+input{
+  background-color: #f9f9f9;
+  height: 100rpx;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a5a6a;
+  text-align: center;
+}

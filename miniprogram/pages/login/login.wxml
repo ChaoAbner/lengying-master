@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view wx:if="{{canIUse}}">
+    <view class='header'>
+        <image src='https://6c65-lengying-5889da-1258620266.tcb.qcloud.la/public/logo.jpg?sign=c7364aa6c96ae3dd374bfd794494d678&t=1557136561'></image>
+    </view>
+
+    <view class='content'>
+    <!-- 「棱影」 -->
+        <view class='title'>登录棱影</view>
+        <text>欢迎来到棱影</text>
+        <text>这里有一群热爱摄影的高校青年</text>
+        <text>在这里</text>
+        <text>你可以展现你的摄影艺术和校园风采</text>
+        <text>用照片说出你的故事</text>
+    </view>
+ 
+    <button class='bottom' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+    
+    <view class='login-allow'>登录即同意棱影<text bindtap='go_agreement'>用户协议</text>和    <text bindtap='go_agreement'>隐私协议</text></view>
+</view>

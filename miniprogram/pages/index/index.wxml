@@ -1,0 +1,105 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px;' bindtouchstart='onTouchStart' bindtouchend='onTouchEnd'>
+<!-- <scroll-view bindtouchend='touchend' scroll-y='true' style='height:{{system.windowHeight-height}}px; margin-top: {{height}}px;' bindscroll='onScroll' bindscrolltolower='onScrollToLower' scroll-into-view='{{into_view}}' scroll-top='{{scroll_top}}'> -->
+  <!-- 下拉刷新  -->
+    <image animation='{{refreshAniData}}' class='down-refresh-img' style='position: absolute; left:{{system.windowWidth/2 - 12}}px; top:{{-refresh_height}}px; z-index: 9999;' src='../../images/index/load.gif'></image>
+  <!-- </view> -->
+  <!-- 下拉刷新  -->
+
+  <view class='item item-{{index}}' wx:for="{{data_list}}" wx:for-item='item' wx:for-index='index'>
+    <view wx:if='{{!item.isPassed}}' class='show'>
+      <image class='cover-load-img' bindtap='previewImg' data-item='{{item}}' style='max-height:{{system.windowHeight *0.95}}px;height:{{item.height / item.width * system.windowWidth }}px;opacity: {{load_img_group[index] ? "0" : "0.5"}};' mode='widthFix' src='{{item.urls.thumb}}'></image>
+      <image bindload='imgLoadDone' bindtap='previewImg' data-index='{{index}}' data-item='{{item}}' style='max-height:{{system.windowHeight *0.95}}px;height:{{item.height / item.width * system.windowWidth }}px; opacity: {{load_img_group[index] ? "1" : "0"}};' mode='widthFix' src='{{ (show_img_group[index]) ? item.urls.regular : ""}}'></image>
+    </view>
+
+    <!-- 用户图片数据 -->
+    <view wx:if='{{item.isPassed}}' class='show'>
+      <image bindload='imgLoadDone' bindtap='previewImg' data-index='{{index}}' data-item='{{item}}' style='max-height:{{system.windowHeight *0.95}}px;height:{{item.height / item.width * system.windowWidth }}px; opacity: {{load_img_group[index] ? "1" : "0.3"}}; background-color: #ccc;' mode='widthFix' src='{{(show_img_group[index]) ? item.tempFileURL : ""}}'></image>
+    </view>
+    <!-- 用户图片数据 -->
+
+    <view class='info'>
+      <view class='wiget'>
+        <view wx:if='{{!item.isPassed}}' bindtap='like_func' data-item='{{item}}' data-id='{{item.id}}'  data-index='{{index}}' class='like'>
+          <image wx:if='{{!like_obj[item.id]}}' src='../../images/index/like.png'></image>
+          <text wx:if='{{!like_obj[item.id]}}'>{{item.likes}}</text>
+          <image wx:if='{{like_obj[item.id]}}' src='../../images/index/liked.png'></image>
+           <text wx:if='{{like_obj[item.id]}}'>{{item.likes + 1}}</text>
+        </view>
+        <!-- 用户点赞数据 -->
+        <view wx:if='{{item.isPassed}}' bindtap='like_func' data-item='{{item}}' data-id='{{item.iid}}' data-index='{{index}}' class='like'>
+          <image wx:if='{{!like_obj[item.iid]}}' src='../../images/index/like.png'></image>
+          <text wx:if='{{!like_obj[item.iid]}}'>{{item.like_num}}</text>
+          <image wx:if='{{like_obj[item.iid]}}' src='../../images/index/liked.png'></image>
+           <text wx:if='{{like_obj[item.iid]}}'>{{item.like_num + 1}}</text>
+        </view>
+        <!-- 用户点赞数据 -->
+
+        <view wx:if='{{!item.isPassed}}' bindtap='show_comment' data-id='{{item.id}}' class='comment'>
+          <image src='../../images/index/comment.png'></image>
+          <text wx:if="{{comment_obj[item.id]}}">{{comment_obj[item.id]}}</text>
+          <text wx:if="{{!comment_obj[item.id]}}">0</text>
+        </view>
+        <!-- 用户评论数据 -->
+        <view wx:if='{{item.isPassed}}'  bindtap='show_comment' data-id='{{item.iid}}' class='comment'>
+          <image src='../../images/index/comment.png'></image>
+          <text wx:if="{{comment_obj[item.iid]}}">{{comment_obj[item.iid]}}</text>
+          <text wx:if="{{!comment_obj[item.iid]}}">{{item.comment_num}}</text>
+        </view>
+        <!-- 用户评论数据 -->
+        <image bindtap='action_sheet' data-item='{{item}}' class='join-coll' src='../../images/index/plus.png'></image>
+      </view>
+      <!--/ wiget -->
+
+      <view class='user'>
+        <text wx:if="{{item.title}}" class='title'>{{item.title}}</text>
+        <view class='recommend' wx:if="{{!item.title}}">
+          <text class='title'>棱影</text>
+          <image src='../../images/index/recommend.png'></image>
+        </view>
+        <view class='detail'>
+          <text
+           bindtap='go_userpage' data-item='{{item.user}}' class='username'>{{item.user.username}}                 </text> 
+          <text class='dot'></text>
+           <text class='fans'>发布</text>
+          <!-- <text class='fans'>粉丝 {{0}}</text> -->
+          <text wx:if='{{!subscribe_obj[item.user.id] && (item.user.username != userInfo.nickName) && !item.user.uid}}' bindtap='doSubscribe' data-index='{{index}}' data-user='{{item.user}}' class='focus'>关注ta</text>
+          <text wx:if='{{subscribe_obj[item.user.id] && (item.user.username != userInfo.nickName) && !item.user.uid}}' bindtap='doSubscribe' data-user='{{item.user}}' class='focused'>已关注</text>
+
+          <!-- 用户关注数据 -->
+          <text wx:if='{{!subscribe_obj[item.user.uid] && (item.user.uid != cry_id) && item.user.uid}}' bindtap='doSubscribe' data-user='{{item.user}}' class='focus'>关注ta</text>
+          <text wx:if='{{subscribe_obj[item.user.uid && (item.user.uid != cry_id) && item.user.uid]}}' bindtap='doSubscribe' data-user='{{item.user}}' class='focused'>已关注</text>
+          <!-- 用户关注数据 -->
+
+          <image wx:if='{{!item.isPassed}}'  bindtap='go_userpage' data-item='{{item.user}}' class='user-avater' src='{{item.user.profile_image.medium}}'></image>
+          <!-- 用户头像数据 -->
+          <image wx:if='{{item.isPassed}}'  bindtap='go_userpage' data-item='{{item.user}}' class='user-avater' src='{{item.user.avater}}'></image>
+          <!-- 用户头像数据 -->
+        </view>
+      </view>
+    </view>
+    <!-- /info -->
+
+    <view wx:if='{{item.location && item.location !== "中国"}}' class='location'>
+      <image src='../../images/icon/place.png'></image>
+      {{item.location}}
+    </view>
+  </view>
+  <!-- /item -->
+    <view wx:if='{{data_list.length}}' class='bottom-load'>
+      <image style='margin-right: 10px; width: 36rpx; height: 36rpx;' src='../../images/index/load.gif'></image>
+    </view>
+<!-- </scroll-view>  -->
+</view>
+
+<!-- action sheet -->
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="action_sheet">
+    <!-- <action-sheet-item wx:if='{{}}' bindtap='goAddColl'>加入影集</action-sheet-item> -->
+    <action-sheet-item >
+      <button open-type='share' style='background-color: #fff; border: none'>分享</button>
+    </action-sheet-item>
+    <action-sheet-item style='color: #f00;' bindtap='goReport'>举报</action-sheet-item>
+  <action-sheet-cancel >取消</action-sheet-cancel>
+</action-sheet>
+<!-- action sheet -->

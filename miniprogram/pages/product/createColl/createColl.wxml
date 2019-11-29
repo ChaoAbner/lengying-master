@@ -1,0 +1,30 @@
+<!--pages/product/createColl/createColl.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px;'>
+  <view class='input-con'>
+    <input bindblur='setTitle' placeholder='影集标题'></input>
+    <textarea bindblur='setDescription' placeholder='影集描述'></textarea>
+  </view>
+
+  <view class='tag'>
+    <text class='title'>添加影集标签</text>
+    <text wx:if='{{!inputShow}}' bindtap='inputTag' class='add'>+ 标签</text>
+    <input wx:if='{{inputShow}}' focus='{{inputShow}}' bindblur='inputBlur'></input>
+
+    <view class='tag-area'>
+      <view class='tag-item' wx:for='{{tagLists}}' wx:index='index'>
+      {{item}}
+      <image bindtap='deleteTag' data-index='{{index}}' src='../../../images/preview/error.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='permission'>
+    影集是否公开
+    <switch checked bindchange="switchChange" />
+  </view>
+
+  <button bindtap='createColl'>确定创建</button>
+
+</view>

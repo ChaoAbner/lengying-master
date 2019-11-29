@@ -1,0 +1,90 @@
+/* pages/search/community/community.wxss */
+.header{
+  width: 100%;
+  text-align: center;
+  color:white;
+  background: linear-gradient(to right,#23074d,#cc5333);
+  position: relative;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.back-view{
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 99;
+}
+.back-view image{
+  width: 54rpx;
+  height: 54rpx;
+  margin-left: 1em;
+}
+.header .title{
+  font-weight: bold;
+  font-size: 1.5em;
+  position: absolute;
+  left: 1em;
+  bottom: 2em;
+}
+.header .text{
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+}
+
+.tagBall{
+    width: 50rpx;
+    height: 300rpx;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag{
+    display: block;
+    position: absolute;
+    left: 0rpx;
+    top: 0rpx;
+    color: #000;
+}
+
+.tagBall image{
+  width: 32rpx;
+  height: 54rpx;
+}
+.button{
+  margin: 2em 0 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.button button{
+  width: 40%;
+  border-radius: 100px;
+  height: 100rpx;
+  display: flex;
+  font-size: 0.9em;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.button .extracting{
+  background-color: #2a5fad;
+}
+.button .push{
+  background-color: #ee4949;
+}
+
+.agreement{
+  margin-bottom: 2em;
+  width: 100%;
+  margin: 0 auto;
+  color: #6a7a8a;
+  font-size: 0.9em;
+  text-align: center;
+}

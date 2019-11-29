@@ -1,0 +1,11 @@
+<!--pages/me/help/help.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view class='con' style='margin-top:{{height}}px;'>
+  <view bindtap='go_detail' data-q='{{item}}' class='q-item' wx:for='{{question}}'>
+    <text>{{item}}</text>
+    <image src='../../../images/icon/arrow-hui.png'></image>
+  </view>
+
+  <button open-type='contact' hover-class='none'>有问题？联系客服</button>
+</view>

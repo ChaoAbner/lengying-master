@@ -1,0 +1,19 @@
+<!--pages/me/like/like.wxml-->
+
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 0 0 0; box-sizing: border-box;'>
+  <view class='like-con'>
+    <view style='height: {{system.windowHeight * 0.4}}px' bindtap='previewImg' data-item='{{item}}' class='like-item' wx:for='{{data_list}}' wx:index='index'>
+      <image style='background-color: {{item.color}}' mode='aspectFill' wx:if='{{item.tempFileURL}}' src='{{item.tempFileURL}}'></image>
+      <image style='background-color: {{item.color}}' mode='aspectFill' wx:else src='{{item.urls.small}}'></image>
+    </view>
+    <view wx:if='{{data_list.length % 2}}' class='like-item' style='height: {{system.windowHeight * 0.4}}px'></view>
+  </view>
+
+  <view class='no-data' wx:if='{{!data_list.length}}'>
+      <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+      <text wx:if='{{nvabarData.title == "我喜欢的"}}'>你还没有点赞过图片哦</text>
+      <text wx:else>他还没有点赞过图片哦</text>
+    </view>
+</view>

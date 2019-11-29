@@ -1,0 +1,20 @@
+<!--pages/addToColl/addToColl.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+  <view class='add-coll' bindtap='goCreateColl' style='top: {{height}}px;'>
+   <view class='inner-add'>
+    <image src='../../images/add.png'></image>
+      创建影集
+   </view>
+  </view>
+
+
+ <view style='margin-top: {{height + 80}}px; '>
+  <view bindtap='addImgToColl' data-cid='{{item.cid}}' class='coll-item' wx:for='{{coll_data_list}}' wx:index='index'>
+    <image src='{{item.priview_photo}}' mode='aspectFill' style='background-color: #f4f4f4;'></image>
+    <view class='flex-column'>
+      <text style='color: #666;'>{{item.title}}</text>
+      <text style='color: #ccc; font-size: 0.9em'>{{item.photos_num}}张照片</text>
+    </view>
+  </view>
+ </view>

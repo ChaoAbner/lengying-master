@@ -1,0 +1,84 @@
+<!--pages/me/editInfo/editInfo.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding-bottom: 2em;'>
+
+  <view class='info'>
+    <text class='title'>设置封面</text>
+    
+    <!-- background img -->
+    <view class='background'  bindtap='action_sheet'>
+      <view class='mask' style='top:0; left:0; height:{{system.windowHeight * 0.5}}px;'>
+        <image src='../../../images/icon/camera.png'></image>
+      </view>
+        <image mode='aspectFill' style='height:{{system.windowHeight * 0.5}}px;' src='{{cover_img}}'></image>
+    </view>
+    <!-- background img -->
+
+    <!-- action sheet -->
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="action_sheet">
+        <action-sheet-item bindtap="change_backimg">选择封面图片</action-sheet-item>
+      <action-sheet-cancel >取消</action-sheet-cancel>
+    </action-sheet>
+    <!-- action sheet -->
+
+  </view>
+  
+
+  <!-- info -->
+  <view class='info'>
+    <text class='title'>关于你</text>
+    <view class='info-item'>
+      <text class='item-title'>昵称</text>
+      <input disabled='true' value='{{userinfo.nickName}}'></input>
+    </view>
+
+    <view class='info-item'>
+      <text class='item-title'>性别</text>
+      <input disabled='true' value='{{userinfo.gender ? "男" : "女"}}'></input>
+    </view>
+
+    <view class='info-item'>
+      <text class='item-title'>介绍</text>
+      <textarea placeholder='{{description}}' bindblur='input_confirm'></textarea>
+    </view>
+  </view>
+  <!-- info -->
+
+    <!-- info -->
+  <view class='info'>
+    <text class='title'>位置</text>
+    <view class='info-item'>
+      <text class='item-title'>国家</text>
+      <input disabled='true' value='中国'></input>
+    </view>
+
+    <view class='info-item'>
+     <text class='item-title'>省份/城市</text>
+     <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}} - {{region[1]}} - {{region[2]}}
+          <image src='../../../images/icon/arrow-hui.png'></image>
+        </view>
+      </picker>
+    </view>
+
+    <view class='info-item'>
+      <text class='item-title'>高校</text>
+        <picker bindchange="bindSchoolChange" value="{{school_index}}" range="{{school_list}}">
+        <view  class="picker">
+          {{school}}
+          <image src='../../../images/icon/arrow-hui.png'></image>
+        </view>
+       
+      </picker>
+    </view>
+
+  </view>
+  <!-- info -->
+  <view class='flex-center'>
+    <button bindtap='confirm_edit' >确认更改</button>
+  </view>
+
+
+</view>

@@ -1,0 +1,50 @@
+<!--pages/search/activity/detail/detail.wxml-->
+<!-- <nav-bar navbar-data='{{nvabarData}}'></nav-bar> -->
+
+<view class='con'>
+  <!-- header -->
+  <view class='header' style='height: {{system.screenHeight * 0.4}}px'>
+    <view class='back-view' style='height:{{height*2 -48}}px; '>
+      <image bindtap='back_navg' src='../../../../images/arrow.png'></image>
+    </view>
+    <view class='mask' style='height: {{system.screenHeight * 0.4}}px'>
+      <text class='title'>「 {{activity.title}} 」</text>
+    </view>
+    <image class='background' src='{{activity.posters}}' style='height: {{system.screenHeight * 0.4}}px' mode='aspectFill'></image>
+  </view>
+
+  <view class='content'>
+    <view class='c-se'>
+      <text class='c-title'>活动时间</text>
+      <text class='c-text'>{{activity.start_time}} ~ {{activity.end_time}}</text>
+    </view>
+
+    <view class='c-se'>
+      <text class='c-title'>主办方</text>
+      <text class='c-text'>{{activity.host}}</text>
+    </view>
+
+    <view class='c-se'>
+      <text class='c-title'>评选方式</text>
+      <text class='c-text'>{{activity.select_way}}</text>
+    </view>
+
+     <view class='c-se'>
+      <text class='c-title'>作品要求</text>
+      <text class='c-text'>{{activity.work_require}}</text>
+    </view>
+
+    <view class='c-se'>
+      <text class='c-title'>奖品设置</text>
+      <text class='c-text' style='margin-bottom: 0.1em;' wx:for='{{prize_box}}'>{{item}}</text>
+    </view>
+
+     <view class='c-se'>
+      <text class='c-title'>报名方法</text>
+      <text class='c-text'>{{activity.register_method}}</text>
+    </view>
+
+  </view>
+
+  <button bindtap='go_upload'>参与活动</button>
+</view>

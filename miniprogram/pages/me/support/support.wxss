@@ -1,0 +1,32 @@
+/* pages/me/support/support.wxss */
+.thanks, .do-reward{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.thanks image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 1em;
+}
+.thanks text, .do-reward text{
+  color: #666;
+}
+
+.do-reward{
+  margin-top: 2em;
+}
+.do-reward text{
+  margin: 0.5em;
+}
+.do-reward button{
+  margin-top: 1em;
+  background-color:#ee4949;
+  color: #fff;
+  text-align: center;
+  width: 40%;
+  border-radius: 100px;
+}

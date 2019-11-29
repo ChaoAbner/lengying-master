@@ -1,0 +1,21 @@
+<!--pages/me/feedback/feedback.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px; padding: 0.1em 0; '>
+    <view class='content'>
+      <text>反馈意见描述</text>
+      <view class='feedback-choose'>
+        <text bindtap='add_feed' data-choose='{{item}}' wx:for='{{feedback_list}}'>{{item}}</text>
+      </view>
+      <textarea value='{{text}}' bindblur='textBlur' class='feedback_input' placeholder='在这里描述你的反馈意见'></textarea>
+    </view>
+
+    <view class='contact'>
+      <text>留下您的联系方式,有助于尽早解决问题</text>
+      <input bindblur='inputBlur' class='contact_input' placeholder='手机号/QQ/邮箱等'></input>
+    </view>
+
+    <button bindtap='submit'>提交</button>
+
+    <button plain style='padding:0; border: none;color: #4183c4; text-decoration:underline' open-type='feedback'>详细反馈</button>
+</view>

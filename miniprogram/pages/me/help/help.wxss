@@ -1,0 +1,31 @@
+/* pages/me/help/help.wxss */
+
+.con{
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+
+.q-item{
+  display: flex;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 1em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  color: #2a3a4a;
+  align-items: center;
+  justify-content: space-between;
+}
+.q-item image{
+  width: 36rpx;
+  height: 36rpx;
+}
+button{
+  margin-top: 2em;
+  border: none;
+  background-color: #fff;
+  font-size: 1em;
+  text-decoration: underline;
+  color: #4183c4;
+
+}
+button::after{ border: none; }

@@ -1,0 +1,26 @@
+<!--pages/login/setschool/setschool.wxml-->
+
+<view class='school-con'>
+  <text class='title'>你的学校</text>
+
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      {{region[0]}} - {{region[1]}} - {{region[2]}}
+      <image src='../../../images/icon/arrow-hui.png'></image>
+    </view>
+  </picker>
+
+  <picker bindchange="bindSchoolChange"  value="{{school_index}}" range="{{school_list}}">
+    <view class="picker">
+      {{school_list[school_index]}}
+      <image src='../../../images/icon/arrow-hui.png'></image>
+    </view>
+  </picker>
+
+  <input bindblur='blur' placeholder='没找到？手动输入'></input>
+
+  <view class='confirm'>
+    <button bindtap='confirm_edit'>确定</button>
+    <text bindtap='switchto_index'>跳过</text>
+  </view>
+</view>

@@ -1,0 +1,182 @@
+<!--pages/me/me.wxml-->
+
+<view bindtouchmove='touchMove' bindtouchstart='touchStart' bindtouchend='touchEnd'  class='container'>
+
+  <scroll-view  scroll-y='true'
+    style="height:{{height}}px; overflow: scroll; white-space:nowrap;" class='session' >
+    <view class='background'>
+      <image mode='aspectFill' style='height:{{system.windowHeight * 0.5}}px; background-color: #f1f1f1;' src='{{cover_img}}'></image>
+    </view>
+    <!-- /background -->
+
+    <view class='user'>
+    <!-- 用户头像 -->
+       <image class='avater' bindtap='prewAvater' data-url='{{userinfo.avatarUrl}}' src='{{userinfo.avatarUrl}}'></image>
+       <view class='right-fun'>
+        <!-- 设置自己的标签 -->
+        <!-- <image src='../../images/icon/info.png'></image> -->
+        <!-- 设置个人信息 -->
+        <image bindtap='goEdit' style='height: 48rpx; width: 48rpx; margin: 0.8em;' src='../../images/icon/edit.png'></image>
+         <!-- 分享 -->
+        <image bindtap="action_sheet" src='../../images/icon/share.png'></image>
+
+       </view>
+       <!-- /right-fun -->
+       <view class='info'>
+        <!-- 用户名 性别 -->
+          <view style='margin-bottom: 0.3em;'>
+            <text style='font-size: 1.5em; color: #2c2c2c;'>{{userinfo.nickName}}</text>
+            <!-- 判断gender 1为男 else为女 -->
+            <image style='margin-left: 10rpx;' wx:if="{{userinfo.gender == 1}}" src="../../images/icon/male.png"></image>
+             <image style='margin-left: 10rpx;' wx:if="{{userinfo.gender != 1}}" src="../../images/icon/female.png"></image>
+          </view>
+            
+          <view style='margin-bottom: 0.2em;'>
+            <image style='margin-right: 10rpx;' src='../../images/icon/university.png'></image>
+            <!-- 设置地区 -->
+            <text bindtap='go_edit' style='color: #777;'>{{user.school ? user.school : "设置我的高校"}}</text>
+          </view>
+
+          <view class='fans color_hui'  style='margin-bottom: 0.2em;'>
+            <view bindtap='goFollow' data-type='f' class='column-flex'>
+              <text style='color: #2c2c2c; font-weight: bold;'>{{user.followers_count ? user.followers_count : 0}}</text>
+              <text>粉丝</text>
+            </view>
+              
+            <view bindtap='goFollow' data-type='g' class='column-flex'>
+              <text style='color: #2c2c2c; font-weight: bold;'>{{user.following_count ? user.following_count : 0}}</text>
+              <text>关注</text>
+            </view>
+
+            <view bindtap='goFollow' data-type='l' class='column-flex'>
+              <text style='color: #2c2c2c; font-weight: bold;'>{{user.total_likes ? user.total_likes : 0}}</text>
+              <text>喜欢</text>
+            </view>  
+          </view>
+       </view>
+       <!-- /info -->
+    </view>
+    <!-- /user -->
+
+    <view class='collection'>
+      <text class='title'>作品</text>
+      <view class='works'>
+      <text style='color: {{current == 0 ? "#ff3264" : ""}}; font-size: {{!current ? "1.1em" : "0.9em"}};' class='text-1' bindtap='tap_change' data-current='0'>图片</text>
+        <text style='color: {{current == 1 ? "#ff3264" : ""}}; font-size: {{current ? "1.1em" : "0.9em"}};' class='text-2' bindtap='tap_change' data-current='1'>影集</text>
+
+      </view>
+      <swiper style='height:{{swiper_height}}px; margin-top: 0.5em;' current="{{current}}" bindchange='change_page' autoplay='{{autoplay}}'>
+              <swiper-item>
+                <view class='{{!img_data ? "user_img" : "has_img"}}'>
+                  <!-- 收藏集 -->
+                  <view wx:if='{{!img_data}}' class='tip'>
+                    <!-- <image src='../../images/face.png'></image>-->
+                    <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+                    <text>你还没有发布过图片哦</text>
+                  </view>
+                  <!-- tip end -->
+                  <!-- <view class='show-img-item'> -->
+                    <image bindtap='previewImg' data-item='{{item}}' mode='aspectFill' wx:if='{{img_data && (index < last_img_index+1)}}' wx:for='{{img_data}}' wx:index='index' src='{{item.tempFileURL}}' style='width: {{real_img_width_list[index]}}px; height: {{real_img_height_list[index]}}px; margin-bottom: 10px; margin-right: 10px;border-radius: 10px; background-color: #ccc;'></image>
+                  <!-- </view> -->
+
+                </view>
+              </swiper-item>
+              <swiper-item>
+                <view class='{{!coll_data ? "user_coll" : "has_coll"}}'>
+                  <!-- 我的图片 -->
+                  <view wx:if='{{!coll_data}}' class='tip'>
+                    <image src='https://www.fosuchao.com/api/lengying/images/temp/not-found'></image>
+                    <text>你还没有影集哦</text>
+                  </view>
+                  <!-- tip end -->
+
+                  <view bindtap='go_detailColl' data-item='{{item}}' wx:if='{{((index + 1) * 74 < swiper_height) && coll_data}}' class='coll-item' wx:for='{{coll_data}}' wx:index='index' >
+                    <view class='flex-align-center'>
+                      <image mode='aspectFill' wx:if='{{!item.tempFileURL}}' class='coll-preview-img' src='{{item.priview_photo}}'></image>
+                      <image mode='aspectFill' wx:if='{{item.tempFileURL}}' class='coll-preview-img' src='{{item.tempFileURL}}'></image>
+                      <view class='flex-column'>
+                        <text class='title'>{{item.title}}</text>
+                        <text class='num'>{{item.photos_num}}张照片</text>
+                      </view>
+                    </view>
+                   
+                    <image class='arrow' src='../../images/icon/arrow-hui.png'></image>
+                  </view>
+                </view>
+              </swiper-item>
+        </swiper>
+        <!-- 查看更多 -->
+        <view bindtap='goProduct' data-current='{{current}}' class='lookmore'>
+          <text>更多</text><image src='../../images/icon/arrow.png'></image>
+        </view>
+    </view>
+    <!--/ collection -->
+
+    <view class='feedback'>
+      <text class='title'>关于</text>
+      <view class='about'>
+      <!-- 意见反馈 -->
+        <view class='border-view' bindtap='go_feedback'>
+          <!-- <view class='border-line'></view> -->
+          <view class='about-inner'>
+            <image src='../../images/edit.png'></image>
+            <text>意见反馈</text> 
+          </view>
+          <image class='arrow-mr' src='../../images/icon/arrow-hui.png'></image>
+        </view>
+        <!-- 联系作者 -->
+        <view class='border-view' bindtap='go_contact'>
+          <!-- <view class='border-line'></view> -->
+          <view class='about-inner'>
+            <image src='../../images/call.png'></image>
+            <text>联系我们</text>
+          </view>
+          <image class='arrow-mr' src='../../images/icon/arrow-hui.png'></image>
+        </view>
+      <!-- 使用帮助 -->
+        <view class='border-view' bindtap='go_help'>
+          <!-- <view class='border-line'></view> -->
+          <view class='about-inner'>
+            <image src='../../images/help.png'></image>
+            <text>使用帮助</text> 
+          </view>
+          <image class='arrow-mr' src='../../images/icon/arrow-hui.png'></image>
+        </view>
+      <!-- 支持作者 -->
+        <view class='border-view' bindtap='go_support'>
+          <!-- <view class='border-line'></view> -->
+          <view class='about-inner'>
+            <image src='../../images/link.png'></image>
+            <text>支持我们</text>
+          </view>
+          <image class='arrow-mr' src='../../images/icon/arrow-hui.png'></image>
+        </view>
+      </view>
+    </view>
+    <!--/ feedback -->
+    <view style='margin: 2em 0 2em 0; text-align:center;color: #666;'>一 Version 1.0.0 一</view>
+  </scroll-view>
+  <!-- /session -->
+</view>
+
+<!-- action sheet -->
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="action_sheet">
+    <action-sheet-item bindtap='show_canvas' >生成海报</action-sheet-item>
+    <action-sheet-item >
+      <button open-type='share' style='background-color: #fff;'>分享给好友</button>
+    </action-sheet-item>
+  <action-sheet-cancel >取消</action-sheet-cancel>
+</action-sheet>
+<!-- action sheet -->
+
+<!-- canvas -->
+<view animation='{{canvasAniData}}' class="canvas-box {{!canvas_hidden ? '' : 'mask'}}" 
+style='width:{{system.windowWidth}}px;height:{{system.windowHeight}}px;left: {{-system.windowWidth}}px;'>
+  <canvas canvas-id='share_canvas' style='height:{{system.windowHeight * 0.76}}px;'></canvas>
+  <view class='flex-row'>
+    <button bindtap='hide_canvas' class='canvas-button' style='background-color: #fff; color: #2c2c2c;'>关闭</button>
+    <button bindtap='save_to_album' class='canvas-button' style='background-color: #ee4949; color: #fff;'>保存海报</button>
+  </view>
+</view>
+
+<!-- canvas -->

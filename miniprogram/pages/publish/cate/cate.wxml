@@ -1,0 +1,11 @@
+<!--pages/publish/cate/cate.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top: {{height}}px;'>
+  <scroll-view scroll-y='true' style='height:{{system.windowHeight}}px;'>
+    <view bindtap='finish_choose' data-item='{{item}}' wx:for='{{cate_list}}' wx:item='item'>
+      <text>{{item}}</text>
+      <image wx:if='{{item == choose}}' src='../../../images/icon/true.png'></image>
+    </view>
+  </scroll-view>
+</view>

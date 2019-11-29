@@ -1,0 +1,17 @@
+<!--pages/me/support/support.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view style='margin-top:{{height}}px;'>
+    <view class='thanks'>
+      <image src='../../../images/do-hreat.png'></image>
+      <text style='margin-bottom: 1em;'>你的使用就是对我们最好的支持~</text>
+      <text>你可以将棱影分享给身边爱好摄影的朋友</text>
+    </view>
+
+    <view class='do-reward'>
+      <text>如果你觉得这个小程序不错</text>
+      <text>可以给我们赞赏</text>
+      <text>开发不易，万分感谢</text>
+      <button bindtap='go_reward'>赞赏</button>
+    </view>
+</view>

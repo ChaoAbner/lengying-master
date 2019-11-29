@@ -1,0 +1,118 @@
+/* pages/product/product.wxss */
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.header{
+  width: 100%;
+  display: flex;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+.header view{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0;
+}
+.underline{
+  width: 50%;
+  height: 5rpx;
+  background-color: #d52349;
+  /* margin-bottom: 0.5em; */
+}
+
+.h-con{
+  z-index: 999; 
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+}
+.img-con{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.img-item{
+  width: 50%;
+  padding: 2% 0 0 2%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.img-item image{
+  vertical-align: top;
+  margin: 1%;
+  border-radius: 10px;
+}
+.no-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
+.no-data image{
+  width: 400rpx;
+  height: 400rpx;
+}
+.scroll-coll{
+  padding-bottom: 2em;
+  box-sizing: border-box;
+}
+.pub{
+  background-color: #ee4949;
+  color: #fff;
+  width: 40%;
+  border-radius: 100px;
+  margin-top: 2em;
+}
+
+.add-coll{
+  width: 90%;
+  border: 1px solid #d52349;
+  border-radius: 20rpx;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: #d52349;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-coll image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 0.5em;
+}
+.coll-item{
+  width: 90%;
+  margin: 0 auto 2em auto;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+ box-shadow:0 8px 6px -2px #ccc;
+}
+.coll-item image{
+  width: 100%;
+}
+.coll-item .img{
+  background-color: #d8d8d8;  
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.under-desc{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3em 0;
+  box-sizing: border-box;
+}

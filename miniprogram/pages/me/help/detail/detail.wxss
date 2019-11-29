@@ -1,0 +1,36 @@
+/* pages/me/help/detail/detail.wxss */
+text{
+  display: block;
+}
+.flex{
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+image{
+  width: 48rpx;
+  height: 48rpx;
+  margin: 0.5em 0;
+}
+.title{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1a2a3a;
+}
+.con{
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+.answer{
+  color: #4a5a6a;
+  font-size: 1.1em;
+  margin: 0.5em;
+}
+.answer:first-of-type{
+  margin-top: 0;
+}
+.answer:last-of-type{
+  margin-bottom: 0;
+}

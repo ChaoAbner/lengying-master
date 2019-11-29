@@ -1,0 +1,77 @@
+/* pages/product/createColl/createColl.wxss */
+
+.input-con{
+  padding: 1em 0;
+  box-sizing: border-box;
+}
+.input-con input, textarea{
+  padding: 0.5em 1em;
+  width: 100%;
+  background-color: #fff;
+  color: #2c2c2c;
+  font-size: 0.9em;
+  box-sizing: border-box;
+}
+
+input{
+  border-top: 1px solid #f4f4f4;
+  height: 100rpx;
+}
+textarea{
+  height: 240rpx; 
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+}
+.tag{
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+.title{
+  font-size: 1.3em;
+  color: #2c2c2c;
+  display: block;
+  margin-bottom: 0.5em;
+}
+.add, .tag-item{
+  background-color: #ee4949;
+  color: #fff;
+  padding: 0.2em 0.5em;
+  border-radius: 5rpx;
+  display: inline-block;
+}
+.tag-area{
+  width: 100%;
+  height: 200rpx;
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+  box-sizing: border-box;
+  border-top: 1px #f4f4f4 solid;
+  border-bottom: 1px #f4f4f4 solid;
+}
+.tag-area image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 16rpx;
+}
+.tag-item{
+  border-radius: 10rpx;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  margin-right: 1em;
+}
+.permission{
+  color: #2c2c2c;
+  padding: 0 1em 1em 1em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  border-bottom: 1px #f4f4f4 solid;
+}
+button{
+  background-color: #ee4949;
+  color: #fff;
+  width: 50%;
+  border-radius: 100px;
+}

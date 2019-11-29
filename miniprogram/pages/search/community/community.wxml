@@ -1,0 +1,27 @@
+<!--pages/search/community/community.wxml-->
+<view class='header' style='height: {{system.windowHeight * 0.3}}px'>
+  <view class='back-view' style='height:{{height*2 -48}}px;' >
+    <image bindtap='back_navg' src='../../../images/arrow.png'></image>
+  </view>
+  <text class='title'>流浪卡片</text>
+  <text class='text'>「 带着故事去流浪 」</text>
+</view>
+
+<view style='margin-top: {{system.windowHeight * 0.3}}px; position: relative;'>
+
+  <view class="tagBall">
+    <image src='{{item.img}}' class="tag" wx:for="{{tagEle}}" wx:key="{{index}}" style="z-index:{{item.s}};left: {{item.x}}rpx;top: {{item.y}}rpx;transform: scale({{item.s}})">
+    </image>
+  </view>
+
+  <view class='button'>
+    <button bindtap='doExtracting' class='extracting'>收留今日卡片</button>
+    <!-- <button bindtap='go_mycard' class='extracting'>查看我的卡片</button> -->
+    <button bindtap='doPush' class='push'>发表一张卡片</button>
+  </view>
+
+  <view class='agreement' bindtap='go_mycard'>查看我的卡片</view>
+</view>
+
+
+

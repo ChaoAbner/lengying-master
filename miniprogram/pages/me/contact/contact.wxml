@@ -1,0 +1,59 @@
+<!--pages/me/contact/contact.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+
+<view class='con' style='margin-top: {{height}}px; padding: 0.1em 0; '>
+
+  <view class='sesstion' style='margin-top: 1em;'>
+    <text class='title'>关注我们</text>Follow us
+    <text class='text'>如果你有什么奇思妙想，或者在使用中遇到了问题，可以通过微信公众号联系我们，每一条消息我们都会认真看哦。</text>
+    <view bindtap='show_wx' class='wx'>
+      微信公众号：棱影
+      <image src='../../../images/icon/arrow-hui.png'></image> 
+    </view>
+  </view>
+
+  <view class='sesstion'>
+    <text class='title'>商务合作</text>Business cooperation
+    <text class='text'>棱影正在寻求有价值的商务合作机会，如果您有合作意向，欢迎与我们建立联系。</text>
+    <view bindtap='copy' class='wx'>
+      邮箱：yc@fosuchao.com
+      <image src='../../../images/icon/arrow-hui.png'></image> 
+    </view>
+  </view>
+
+  <view class='sesstion'>
+    <text class='title'>加入我们</text>Join us
+    <text class='text'>如果你想加入棱影这个大家庭，可以联系我们。</text>
+    <view bindtap='copy' class='wx'>
+      邮箱：yc@fosuchao.com
+      <image src='../../../images/icon/arrow-hui.png'></image> 
+    </view>
+  </view>
+
+</view>
+
+<!-- <view style='margin-top: {{height}}px; padding: 0.1em 0; '>
+    <view class='contact'>
+      <text>留下你的称呼</text>
+      <input bindblur='userCall' class='contact_input' placeholder='你的称呼'></input>
+    </view>
+
+    <view class='contact'>
+      <text>留下你的联系方式</text>
+      <input bindblur='inputBlur' class='contact_input' placeholder='手机号/QQ/邮箱等'></input>
+    </view>
+
+    <view class='content'>
+      <text>写下你想说的话</text>
+      <textarea bindblur='textBlur' class='feedback_input' placeholder='你想对棱影说的话'></textarea>
+    </view>
+
+    <button bindtap='submit'>提交</button>
+
+    <view class='fast-contact'>
+      <text>商务合作，联系邮箱</text>
+      <text>yc@fosuchao.com</text>
+<button style='padding:0; border: none;color: #4183c4; text-decoration:underline' plain open-type="contact" bindcontact="handleContact">有问题？联系客服</button>
+    </view>
+
+</view> -->

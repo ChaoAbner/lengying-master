@@ -1,0 +1,11 @@
+/* pages/me/fans/fans.wxss */
+@import "../follow/follow.wxss";
+
+.school{
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}

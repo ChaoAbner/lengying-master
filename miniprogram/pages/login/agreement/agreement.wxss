@@ -1,0 +1,22 @@
+/* pages/login/agreement/agreement.wxss */
+
+text{
+  display: block;
+  color: #5a6a7a;
+}
+.contain{
+  padding: 0.5em 1em;
+}
+
+.contain .title{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  color: #1a2a3a;
+}
+
+.title-son{
+  font-size: 1.3em;
+  margin: 0.5em 0;
+  color: #3a4a5a;
+}

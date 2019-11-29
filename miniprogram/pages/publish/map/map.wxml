@@ -1,0 +1,27 @@
+<!--pages/publish/map/map.wxml-->
+<view style='margin-top:{{height}}px; background-color: #fff;'>
+  <view class='search' style='height:{{header_height*2 -48}}px; top: {{height}}px;' >
+    <image bindtap='back_page' style='left:16px' src='../../../images/black-Back.png'></image>
+      <image src='../../../images/tabbar/search.png'></image>
+      <input placeholder='搜索地点' bindconfirm='onConfirm'></input>
+  </view>
+  <view bindtouchstart='onTouchStart' class='pos-view' style='margin-top:{{header_height*2 -48 + height}}px'>
+    <map bindregionchange='touchEnd' id="myMap"  show-location />
+      <cover-image animation='{{posAniData}}' style='top:{{(header_height*2 -48)+(380/2 - 15)}}px; left:{{system.screenWidth/2 -15}}px;' class='pos' src='../../../images/position.png'></cover-image>
+  </view>
+
+  <scroll-view scroll-y='true' style='height:{{system.screenHeight - (height+(header_height*2 -48)+360)}}px'>
+      <view class='item s-top'>
+        <view class='item-text'>
+          <text>{{address_data.result.address_reference.landmark_l2.title}}</text>
+          <text class='decri'>{{address_data.result.address}}</text>
+        </view>
+       
+        <view class='botton' bindtap="moveToLocation">获取定位</view>
+      </view>
+  
+      <button bindtap='back_upload' style='margin-left:{{(system.screenWidth - system.screenWidth * 0.8)/2}}px;background-color: #ee4949;' type='primary' >确认</button>
+  </scroll-view>
+  
+</view>
+

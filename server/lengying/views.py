@@ -1849,10 +1849,3 @@ def get_activity(request):
     except Exception as e:
         print(e)
         return  HttpResponse(json_dumps({'error': 1, 'errorMessage': e}))
-
-def qiniu(request):
-    # 构建鉴权对象
-    q = Auth(qiniuconfig.access_key, qiniuconfig.secret_key)
-    # 生成上传 Token，可以指定过期时间等
-    token = q.upload_token(qiniuconfig.bucket_name, qiniuconfig.key, 3600)
-    return HttpResponse(json_dumps({'uptoken': token}))

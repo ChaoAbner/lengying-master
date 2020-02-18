@@ -20,8 +20,8 @@
 
 **前端 ：**
 
-- jQuery
-- Bootstrap
+- wechat-miniprogram
+
 
 ## 项目结构
 

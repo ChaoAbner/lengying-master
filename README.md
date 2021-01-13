@@ -42,6 +42,7 @@
 
 
 ## 项目快照
+![image-20210113155939931](http://img.fosuchao.com/image-20210113155939931.png)
 
 <div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg"/></div>
 

@@ -43,7 +43,7 @@
 
 ## 项目快照
 
-<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113155939931.png" /></div>
+<div margin-bottom="100px" align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113155939931.png" /></div>
 
 
 

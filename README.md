@@ -42,16 +42,15 @@
 
 
 ## 项目快照
-![image-20210113155939931](http://img.fosuchao.com/image-20210113155939931.png)
 
-![image-20210113160030422](http://img.fosuchao.com/image-20210113160030422.png)
+<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113155939931.png" /></div>
 
-![image-20210113160058145](http://img.fosuchao.com/image-20210113160058145.png)
+<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113160030422.png" /></div>
 
-![image-20210113160123695](http://img.fosuchao.com/image-20210113160123695.png)
+<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113160058145.png" /></div>
 
-![image-20210113160146197](http://img.fosuchao.com/image-20210113160146197.png)
+<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113160123695.png" /></div>
 
-![image-20210113160222506](http://img.fosuchao.com/image-20210113160222506.png)
+<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113160146197.png" /></div>
 
 <div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113160222506.png" /></div>

@@ -54,4 +54,4 @@
 
 ![image-20210113160222506](http://img.fosuchao.com/image-20210113160222506.png)
 
-<div align=center><img width="50%" height="60%" src="http://img.fosuchao.com/image-20210113160222506.png" /></div>
+<div align=center><img width="70%" height="80%" src="http://img.fosuchao.com/image-20210113160222506.png" /></div>

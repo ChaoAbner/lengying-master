@@ -44,34 +44,14 @@
 ## 项目快照
 ![image-20210113155939931](http://img.fosuchao.com/image-20210113155939931.png)
 
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/0c10be30f03fc4abe8e930af35b6273.jpg"/></div>
+![image-20210113160030422](http://img.fosuchao.com/image-20210113160030422.png)
 
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/2508837d0ef3d1e262dde83f72609ac.jpg"/></div>
+![image-20210113160058145](http://img.fosuchao.com/image-20210113160058145.png)
 
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/3160c99728c0ddf46b43e29035c9d70.jpg"/></div>
+![image-20210113160123695](http://img.fosuchao.com/image-20210113160123695.png)
 
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/38dc6ca47dce633295a63a16c1ca605.jpg"/></div>
+![image-20210113160146197](http://img.fosuchao.com/image-20210113160146197.png)
 
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/4826d14a4039f7ba36d55b6b7018385.jpg"/></div>
+![image-20210113160222506](http://img.fosuchao.com/image-20210113160222506.png)
 
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/5470f755daedffae6bb67775d4bed08.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/64b2c21f3eb8cdd88b31d6bd933a8c8.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/7f2630e89bfb59fa91d77ec38fa06eb.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/8d9bc7d4824cdc752f3d5e0f89180b0.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/aada8a626fa677d60a3c4e21f1473b3.png"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/b59ce8d11a30345e8e62dfbb7153d88.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/ba637ab7a365aa1e1ea4106838da777.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/bcae95d0090292e3f42ef9a486278a3.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/bdb9f113f132084505cbe552888f82f.jpg"/></div>
-
-<div align=center><img width="50%" height="60%" src="https://github.com/ChaoAbner/lengying-master/blob/master/images/dded2f4f0e474f0e9ad5fe675977598.jpg"/></div>
-
-
+<div align=center><img width="50%" height="60%" src="http://img.fosuchao.com/image-20210113160222506.png" /></div>
